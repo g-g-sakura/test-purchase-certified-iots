@@ -8,7 +8,15 @@
 Recently, we purchased a certain WiFi Router which was certifed by a certification program claiming &quot;fixed-time&quot;.
 It costs more than 200USD, so it should be categorized as not &quot;entry-level&quot;.
 
+After setting up the WiFi Router, we found the following code fragment:
+<pre><code>
+const p = 89894891;
+const g = 2;
+const clientPrivateKey = Math.floor(Math.random() * 1000);
+let clientPublicKey = modPow(g, clientPrivateKey, p);
+</code></pre>
 
+It is really suprising that the private key is generated using <code>Math.random</code>, and such implementation is certified!
 
 </BODY>
 </html>
